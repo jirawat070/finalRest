@@ -11,8 +11,6 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-//Add routing
-// index page 
 app.get('/', function (req, res) {
 	res.send('Express is running');
 });
@@ -25,10 +23,10 @@ app.get('/api/json', function (req, res) {
     res.status(500).json(output);
 });
 
-app.get('/api/products/', db.getAllSuppliers);
+app.get('/api/Suppliers/', db.getAllSuppliers);
 
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5432;
 app.listen(port, function () {
 	console.log('App is running on http://localhost:' + port);
 });
