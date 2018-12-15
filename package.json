@@ -1,0 +1,29 @@
+{
+  "name": "finalRest",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000f\u0000i\u0000n\u0000a\u0000l\u0000R\u0000e\u0000s\u0000t\u0000\r\u0000 \u0000",
+  "main": "db.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "git-init": "^1.0.0",
+    "pg-promise": "^8.5.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jirawat070/finalRest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jirawat070/finalRest/issues"
+  },
+  "homepage": "https://github.com/jirawat070/finalRest#readme"
+}
