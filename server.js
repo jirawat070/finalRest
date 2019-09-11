@@ -23,10 +23,14 @@ app.get('/api/json', function (req, res) {
     res.status(500).json(output);
 });
 
-app.get('/api/Suppliers/', db.getAllSuppliers);
+app.get('/point', db.getAllPoint);
+
+app.get('/point/:name',db.getPointName);
+app.get('/room/:isRoom',db.getRoomName);
+app.get('/map/:p_id',db.getMapInfo);
 
 
-var port = process.env.PORT || 5432;
+var port = process.env.PORT || 8585;
 app.listen(port, function () {
 	console.log('App is running on http://localhost:' + port);
 });
