@@ -94,9 +94,28 @@ function getMapInfo(req, res) {
     })
 }
 
+function getAllMapInfo(req, res) {
+
+
+   
+    db.any('SELECT * FROM public.map' ).then(function (data) {
+        res.status(200).json( 
+               data      
+        );
+    }).catch(function (error) {
+        console.log(error);
+        res.status(500).json({
+            status: 'failed',
+            data: data,
+            message: 'Failed To Retrieved ALL products'
+        });
+    })
+}
+
 module.exports = {
     getAllPoint
     ,getPointName
    ,getRoomName
    ,getMapInfo
+   ,getAllMapInfo
 }

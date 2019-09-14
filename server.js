@@ -28,6 +28,7 @@ app.get('/point', db.getAllPoint);
 app.get('/point/:name',db.getPointName);
 app.get('/room/:isRoom',db.getRoomName);
 app.get('/map/:p_id',db.getMapInfo);
+app.get('/map',db.getAllMapInfo);
 
 
 var port = process.env.PORT || 8585;
