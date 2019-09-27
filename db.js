@@ -112,10 +112,26 @@ function getAllMapInfo(req, res) {
     })
 }
 
+function getAllDirectionGraphInfo(req, res) {
+
+    db.any('SELECT x, y FROM public."DirectionGraph"' ).then(function (data) {
+        res.status(200).json( 
+               data      
+        );
+    }).catch(function (error) {
+        console.log(error);
+        res.status(500).json({
+            status: 'failed',
+            data: data,
+            message: 'Failed To Retrieved ALL products'
+        });
+    })
+}
 module.exports = {
     getAllPoint
     ,getPointName
    ,getRoomName
    ,getMapInfo
    ,getAllMapInfo
+   ,getAllDirectionGraphInfo
 }
