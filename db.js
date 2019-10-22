@@ -2,7 +2,7 @@ const pgp = require('pg-promise')();
 var db = pgp('postgres://ejhivrfxrvzsam:e6ea27848d6af9115aa2c68040e674502dbfb9d288840cac04cbda3e90607967@ec2-107-20-167-241.compute-1.amazonaws.com:5432/d80ue59kfg9h7u?ssl=true');
 
 function getAllPoint(req, res) {
-    db.any('select * FROM public."Point" order by p_id')
+    db.any('select * FROM public."point_v1" order by p_id')
         .then(function (data) {
             res.status(200)
                 .json({
@@ -26,7 +26,7 @@ function getPointName(req, res) {
     console.log("req = "+req.params.name);
     var x = req.params.name;
     console.log('type'+typeof(x));
-    db.any('select * from public."Point" where p_name = ' + "'"+req.params.name+"'" ).then(function (data) {
+    db.any('select * from public."point_v1" where p_name = ' + "'"+req.params.name+"'" ).then(function (data) {
         res.status(200).json( 
                data      
         );
@@ -44,7 +44,7 @@ function getRoomName(req, res) {
     console.log("req = "+req.params.isRoom);
     var x = req.params.isRoom;
     console.log('type'+typeof(x));
-    db.any('select * from public."Point" where "isRoom" = ' + req.params.isRoom ).then(function (data) {
+    db.any('select * from public."point_v1" where "isRoom" = ' + req.params.isRoom ).then(function (data) {
         res.status(200).json( 
                data      
         );
