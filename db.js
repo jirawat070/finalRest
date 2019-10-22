@@ -63,7 +63,7 @@ function getMapInfo(req, res) {
     console.log("req = "+req.params.p_id);
     var x = req.params.isRoom;
     console.log('type'+typeof(x));
-    db.any('SELECT * FROM public.map where p_id = ' + req.params.p_id ).then(function (data) {
+    db.any('SELECT * FROM public.map_v1 where p_id = ' + req.params.p_id ).then(function (data) {
         res.status(200).json( 
                data      
         );
@@ -81,7 +81,7 @@ function getAllMapInfo(req, res) {
 
 
    
-    db.any('SELECT * FROM public.map' ).then(function (data) {
+    db.any('SELECT * FROM public.map_v1' ).then(function (data) {
         res.status(200).json( 
                data      
         );
