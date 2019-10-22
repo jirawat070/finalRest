@@ -97,7 +97,7 @@ function getAllMapInfo(req, res) {
 
 function getAllDirectionGraphInfo(req, res) {
 
-    db.any('SELECT x, y FROM public."DirectionGraph"' ).then(function (data) {
+    db.any('SELECT x, y FROM public."DirectionGraph_v1"' ).then(function (data) {
         res.status(200).json( 
                data      
         );
